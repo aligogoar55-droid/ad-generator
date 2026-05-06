@@ -156,6 +156,73 @@ function generateAds() {
   }
 
   let ad1 = "🔥 عرض من " + name + " على " + offer + "!";
+  let ad2 = "😍 أفضل " + type + " الآن عند " + name;
+  let ad3 = "✨ لا تفوت الفرصة مع عرض " + offer;
+
+  result.innerHTML =
+    "<div class='ad'>" + ad1 + "</div>" +
+    "<div class='ad'>" + ad2 + "</div>" +
+    "<div class='ad'>" + ad3 + "</div>" +
+    "<div class='tag'>#عروض #" + type + "</div>";
+}
+</script>
+
+</body>
+</html>  padding: 12px;
+  background: #22c55e;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ad {
+  background: #0b1220;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2a44;
+}
+
+.tag {
+  margin-top: 10px;
+  color: #60a5fa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h2>مولّد الإعلانات</h2>
+
+    <input id="type" placeholder="نوع النشاط">
+    <input id="name" placeholder="اسم المشروع">
+    <input id="offer" placeholder="العرض">
+
+    <button onclick="generateAds()">توليد</button>
+
+    <div id="result"></div>
+
+  </div>
+</div>
+
+<script>
+function generateAds() {
+
+  let type = document.getElementById("type").value;
+  let name = document.getElementById("name").value;
+  let offer = document.getElementById("offer").value;
+
+  let result = document.getElementById("result");
+
+  if (!type || !name || !offer) {
+    result.innerHTML = "<div class='ad'>رجاءً املأ جميع الحقول</div>";
+    return;
+  }
+
+  let ad1 = "🔥 عرض من " + name + " على " + offer + "!";
   let ad2 = "😍 أفضل " + type + " الآن  text-align: center;
   color: #94a3b8;
   margin-bottom: 25px;
