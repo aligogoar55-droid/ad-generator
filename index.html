@@ -3,38 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ad Generator</title>
+<title>AI Ads Generator Pro</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: system-ui;
   background: #0b1220;
   color: white;
   direction: rtl;
 }
 
 .container {
-  max-width: 700px;
-  margin: 50px auto;
+  max-width: 850px;
+  margin: 40px auto;
   padding: 20px;
 }
 
 .card {
   background: #111a2e;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 20px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #22304a;
+  background: #0b1220;
+  color: white;
 }
 
 button {
   width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.ad {
+  background: #0b1220;
+  border: 1px solid #1f2a44;
   padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  white-space: pre-line;
+}
+
+.tag {
+  margin-top: 12px;
+  color: #60a5fa;
+  font-size: 14px;
+}
+
+.mode {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h1>AI Ads Generator Pro</h1>
+    <div class="subtitle">إعلانات احترافية خلال ثواني</div>
+
+    <input id="type" placeholder="نوع النشاط">
+    <input id="name" placeholder="اسم المشروع">
+    <input id="offer" placeholder="العرض أو الخدمة">
+
+    <button onclick="generate()">توليد إعلانات احترافية</button>
+
+    <div id="result"></div>
+
+    <div class="mode">الوضع: Smart Engine (جاهز للترقية إلى AI)</div>
+
+  </div>
+</div>
+
+<script>
+
+function generate() {
+
+  let type = document.getElementById("type").value;
+  let name = document.getElementById("name").value;
+  let offer = document.getElementById("offer").value;
+
+  let result = document.getElementById("result");
+
+  if (!type || !name || !offer) {
+    result.innerHTML = "<div class='ad'>يرجى ملء جميع الحقول</div>";
+    return;
+  }
+
+  // ======= SMART AI-LIKE ENGINE =======
+
+  let hooks = [
+    "🔥 عرض لا يُفوّت!",
+    "⚡ لفترة محدودة فقط!",
+    "😍 الأفضل في السوق!",
+    "🚀 لا تنتظر أكثر!"
+  ];
+
+  let tones =  padding: 12px;
   background: #22c55e;
   border: none;
   font-weight: bold;
