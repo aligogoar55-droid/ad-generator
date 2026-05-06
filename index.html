@@ -3,38 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Ad Generator</title>
+<title>Ad Generator</title>
 
 <style>
 body {
   margin: 0;
-  font-family: system-ui, Arial;
+  font-family: Arial;
   background: #0b1220;
-  color: #e5e7eb;
+  color: white;
   direction: rtl;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 50px auto;
   padding: 20px;
 }
 
 .card {
   background: #111a2e;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 12px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
 }
 
-.subtitle {
-  text-align: center;
+button {
+  width: 100%;
+  padding: 12px;
+  background: #22c55e;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ad {
+  background: #0b1220;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2a44;
+}
+
+.tag {
+  margin-top: 10px;
+  color: #60a5fa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h2>مولّد الإعلانات</h2>
+
+    <input id="type" placeholder="نوع النشاط">
+    <input id="name" placeholder="اسم المشروع">
+    <input id="offer" placeholder="العرض">
+
+    <button onclick="generateAds()">توليد</button>
+
+    <div id="result"></div>
+
+  </div>
+</div>
+
+<script>
+function generateAds() {
+
+  let type = document.getElementById("type").value;
+  let name = document.getElementById("name").value;
+  let offer = document.getElementById("offer").value;
+
+  let result = document.getElementById("result");
+
+  if (!type || !name || !offer) {
+    result.innerHTML = "<div class='ad'>رجاءً املأ جميع الحقول</div>";
+    return;
+  }
+
+  let ad1 = "🔥 عرض من " + name + " على " + offer + "!";
+  let ad2 = "😍 أفضل " + type + " الآن  text-align: center;
   color: #94a3b8;
   margin-bottom: 25px;
 }
